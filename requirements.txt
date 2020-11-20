@@ -1,0 +1,5 @@
+tensorflow==1.15
+tf-slim
+gradio
+wget
+numpy
