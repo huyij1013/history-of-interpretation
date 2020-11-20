@@ -79,4 +79,4 @@ label = gr.outputs.Label(num_top_classes=3)
 examples = [["doberman.png"], ["dog.png"]]
 
 gr.Interface(classify_image, image, label, capture_session=True, interpretation=guided_vanilla, examples=examples,
-             allow_flagging=False).launch()
+             allow_flagging=False, analytics_enabled=False).launch()
