@@ -38,7 +38,7 @@ class IntegratedGradients(GradientSaliency):
 
     x_diff = x_value - x_baseline
 
-    total_gradients = np.zeros_like(x_value)
+    total_gradients = np.zeros_like(x_value, dtype=float)
 
     for alpha in np.linspace(0, 1, x_steps):
       x_step = x_baseline + alpha * x_diff

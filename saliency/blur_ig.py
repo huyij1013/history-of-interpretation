@@ -70,7 +70,7 @@ class BlurIG(GradientSaliency):
       sigmas = [float(i)*max_sigma/float(steps) for i in range(0, steps+1)]
     step_vector_diff = [sigmas[i+1] - sigmas[i] for i in range(0, steps)]
 
-    total_gradients = np.zeros_like(x_value)
+    total_gradients = np.zeros_like(x_value, dtype=float)
     for i in range(steps):
       x_step = gaussian_blur(x_value, sigmas[i])
       gaussian_gradient = (gaussian_blur(x_value, sigmas[i] + grad_step)

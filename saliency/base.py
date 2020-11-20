@@ -67,7 +67,7 @@ class SaliencyMask(object):
     """
     stdev = stdev_spread * (np.max(x_value) - np.min(x_value))
 
-    total_gradients = np.zeros_like(x_value)
+    total_gradients = np.zeros_like(x_value, dtype=float)
     for i in range(nsamples):
       noise = np.random.normal(0, stdev, x_value.shape)
       x_plus_noise = x_value + noise
