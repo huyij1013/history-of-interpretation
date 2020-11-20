@@ -3,3 +3,4 @@ tf-slim
 gradio
 wget
 numpy
+h5py==2.10
