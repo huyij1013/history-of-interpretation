@@ -2,8 +2,7 @@
 import tensorflow.compat.v1 as tf
 import tf_slim as slim
 import sys
-sys.path.append("models/research/slim")
-from nets import inception_v3
+import inception_v3
 import saliency
 import requests
 import gradio as gr
