@@ -37,16 +37,7 @@ with graph.as_default():
     # Construct tensor for predictions.
     prediction = tf.argmax(logits, 1)
 
-gradient_saliency = saliency.GradientSaliency(graph, sess, y, images)
 guided_backprop = saliency.GuidedBackprop(graph, sess, y, images)
-
-
-def smoothgrad(im):
-    im = im / 127.5 - 1.0
-    prediction_class = sess.run(prediction, feed_dict = {images: [im]})[0]
-    smoothgrad_mask_3d = gradient_saliency.GetSmoothedMask(im, feed_dict = {neuron_selector: prediction_class})
-    smoothgrad_mask_grayscale = saliency.VisualizeImageGrayscale(smoothgrad_mask_3d)
-    return smoothgrad_mask_grayscale.tolist()
 
 
 def guided_vanilla(image):
@@ -73,8 +64,8 @@ def classify_image(inp):
     return {labels[i]: float(prediction[i]) for i in range(1000)}
 
 
-image = gr.inputs.Image(shape=(299, 299, 3))
-label = gr.outputs.Label(num_top_classes=3)
+image = gr.inputs.Image(shape=(299, 299, 3), label="Your Image")
+label = gr.outputs.Label(num_top_classes=3, label="Classification")
 
 examples = [["doberman.png"], ["dog.png"]]
 
