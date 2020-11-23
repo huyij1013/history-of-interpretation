@@ -64,7 +64,7 @@ def classify_image(inp):
     return {labels[i]: float(prediction[i]) for i in range(1000)}
 
 
-image = gr.inputs.Image(shape=(299, 299, 3), label="Your Image")
+image = gr.inputs.Image(shape=(299, 299), label="Your Image")
 label = gr.outputs.Label(num_top_classes=3, label="Classification")
 
 examples = [["doberman.png"], ["dog.png"]]
