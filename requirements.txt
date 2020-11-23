@@ -1,6 +1,5 @@
 tensorflow==1.15
 tf-slim
-gradio
 wget
 numpy
 h5py==2.10
