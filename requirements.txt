@@ -3,4 +3,4 @@ tf-slim
 wget
 numpy
 h5py==2.10
-git+https://github.com/gradio-app/gradio.git@no_example_buttons
+gradio
