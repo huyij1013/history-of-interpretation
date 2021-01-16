@@ -67,7 +67,15 @@ def classify_image(inp):
 image = gr.inputs.Image(shape=(299, 299), label="Your Image")
 label = gr.outputs.Label(num_top_classes=3, label="Classification")
 
-examples = [["doberman.png"], ["dog.png"]]
+examples = [["doberman.png"], ["cat.png"]]
+title = "Interpretation Through Guided Back-Propagation"
+description = "This is a demo of guided back-propagation, an interpretation method developed by Springenberg et al. The underlying model " \
+              "is the Inception Net classifier. To " \
+              "use the demo, simply upload an image (or click to load an example) and hit submit to see its predicted class. Then, hit the interpret button to " \
+              "see an overlaid heatmap generated through guided back-propagation. Read more about this and other methods in our blog post, linked below. "
+article = """
+<p style='text-align: center'><a href='https://thegradient.pub/a-visual-history-of-interpretation-for-image-recognition'>A Visual History of Interpretation for Image Recognition</a></p>
+"""
 
 gr.Interface(classify_image, image, label, capture_session=True, interpretation=guided_vanilla, examples=examples,
-             allow_flagging=False, analytics_enabled=False).launch()
+             allow_flagging=False, analytics_enabled=False, title=title, description=description, article=article).launch()
