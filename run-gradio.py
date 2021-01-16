@@ -72,7 +72,7 @@ title = "Interpretation Through Guided Back-Propagation"
 description = "This is a demo of guided back-propagation, an interpretation method developed by Springenberg et al. The underlying model " \
               "is the Inception Net classifier. To " \
               "use the demo, simply upload an image (or click to load an example) and hit submit to see its predicted class. Then, hit the interpret button to " \
-              "see an overlaid heatmap generated through guided back-propagation. Read more about this and other methods in our blog post, linked below."
+              "see an overlaid heatmap generated through guided back-propagation."
 # article = """
 # <p style='text-align: center'><a href='https://thegradient.pub/a-visual-history-of-interpretation-for-image-recognition'>A Visual History of Interpretation for Image Recognition</a></p>
 # """
