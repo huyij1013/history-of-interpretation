@@ -53,16 +53,16 @@ def guided_vanilla(image):
 inception_net = tf.keras.applications.InceptionV3() # load the model
 
 # Download human-readable labels for ImageNet.
-response = requests.get("https://git.io/JJkYN")
-labels = response.text.split("\n")
-
+# response = requests.get("https://git.io/JJkYN")
+# labels = response.text.split("\n")
+#
 
 def classify_image(inp):
     inp = inp.reshape((-1, 299, 299, 3))
     inp = tf.keras.applications.inception_v3.preprocess_input(inp)
     prediction = inception_net.predict(inp).flatten()
-    return {labels[i]: float(prediction[i]) for i in range(1000)}
-
+    # return {labels[i]: float(prediction[i]) for i in range(1000)}
+    return 0
 
 image = gr.inputs.Image(shape=(299, 299), label="Your Image")
 label = gr.outputs.Label(num_top_classes=3, label="Classification")
